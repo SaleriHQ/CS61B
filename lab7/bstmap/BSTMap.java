@@ -20,7 +20,7 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
 
     public Node root;
 
-    BSTMap() {
+    public BSTMap() {
         root = null;
     }
 
