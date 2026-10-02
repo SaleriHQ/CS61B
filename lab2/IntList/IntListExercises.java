@@ -33,7 +33,9 @@ public class IntListExercises {
         }
     }
 
-    /** Returns the max value in the IntList starting at L. */
+    /**
+     * Returns the max value in the IntList starting at L.
+     */
     public static int max(IntList L) {
         int max = L.first;
         IntList p = L.rest;
@@ -46,8 +48,9 @@ public class IntListExercises {
         return max;
     }
 
-    /** Returns true if the last digit of x is equal to
-     *  the first digit of x.
+    /**
+     * Returns true if the last digit of x is equal to
+     * the first digit of x.
      */
     public static boolean firstDigitEqualsLastDigit(int x) {
         int lastDigit = x % 10;
@@ -78,5 +81,38 @@ public class IntListExercises {
         }
 
         return currElemIsPrime || squarePrimes(lst.rest);
+    }
+
+    public static void dSquareList(IntList L) {
+        if (L == null) return;
+
+        L.first = L.first * L.first;
+        dSquareList(L.rest);
+    }
+
+    public static IntList squareListInerative(IntList L) {
+        if (L == null) return null;
+        return new IntList(L.first * L.first, squareListInerative(L.rest));
+    }
+
+    public static void main(String[] args) {
+        IntList l = new IntList(5, null);
+        IntList l2 = new IntList(15, l);
+        IntList l3 = new IntList(20, l2);
+        dSquareList(l3);
+
+        IntList l4 = squareListInerative(l3);
+
+        IntList p = l3;
+        while (p != null) {
+            System.out.println(p.first);
+            p = p.rest;
+        }
+        System.out.println("Test squareListIterative");
+        p = l4;
+        while (p != null) {
+            System.out.println(p.first);
+            p = p.rest;
+        }
     }
 }

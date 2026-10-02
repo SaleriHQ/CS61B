@@ -4,7 +4,8 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/** Tests the emptySpaceExists() static method of Model.
+/**
+ * Tests the emptySpaceExists() static method of Model.
  *
  * @author Omar Khan
  */
@@ -17,10 +18,10 @@ public class TestEmptySpace {
     /** Note that this isn't a possible board state. */
     public void testCompletelyEmpty() {
         int[][] rawVals = new int[][] {
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
-                {0, 0, 0, 0},
+                { 0, 0, 0, 0 },
+                { 0, 0, 0, 0 },
+                { 0, 0, 0, 0 },
+                { 0, 0, 0, 0 },
         };
 
         b = new Board(rawVals, 0);
@@ -32,10 +33,10 @@ public class TestEmptySpace {
     /** Tests a board that is completely full except for the top row. */
     public void testEmptyTopRow() {
         int[][] rawVals = new int[][] {
-                {0, 0, 0, 0},
-                {2, 4, 2, 4},
-                {4, 2, 4, 2},
-                {2, 4, 2, 4},
+                { 0, 0, 0, 0 },
+                { 2, 4, 2, 4 },
+                { 4, 2, 4, 2 },
+                { 2, 4, 2, 4 },
         };
 
         b = new Board(rawVals, 0);
@@ -47,10 +48,10 @@ public class TestEmptySpace {
     /** Tests a board that is completely full except for the bottom row. */
     public void testEmptyBottomRow() {
         int[][] rawVals = new int[][] {
-                {2, 4, 2, 4},
-                {4, 2, 4, 2},
-                {2, 4, 2, 4},
-                {0, 0, 0, 0},
+                { 2, 4, 2, 4 },
+                { 4, 2, 4, 2 },
+                { 2, 4, 2, 4 },
+                { 0, 0, 0, 0 },
         };
 
         b = new Board(rawVals, 0);
@@ -58,15 +59,14 @@ public class TestEmptySpace {
                 Model.emptySpaceExists(b));
     }
 
-
     @Test
     /** Tests a board that is completely full except for the left column. */
     public void testEmptyLeftCol() {
         int[][] rawVals = new int[][] {
-                {0, 4, 2, 4},
-                {0, 2, 4, 2},
-                {0, 4, 2, 4},
-                {0, 2, 4, 2},
+                { 0, 4, 2, 4 },
+                { 0, 2, 4, 2 },
+                { 0, 4, 2, 4 },
+                { 0, 2, 4, 2 },
         };
 
         b = new Board(rawVals, 0);
@@ -79,10 +79,10 @@ public class TestEmptySpace {
     /** Tests a board that is completely full except for the right column. */
     public void testEmptyRightCol() {
         int[][] rawVals = new int[][] {
-                {2, 4, 2, 0},
-                {4, 2, 4, 0},
-                {2, 4, 2, 0},
-                {4, 2, 4, 0},
+                { 2, 4, 2, 0 },
+                { 4, 2, 4, 0 },
+                { 2, 4, 2, 0 },
+                { 4, 2, 4, 0 },
         };
 
         b = new Board(rawVals, 0);
@@ -95,10 +95,10 @@ public class TestEmptySpace {
     /** Tests a completely full board except one piece. */
     public void testAlmostFullBoard() {
         int[][] rawVals = new int[][] {
-                {2, 4, 2, 4},
-                {4, 2, 4, 2},
-                {2, 0, 2, 4},
-                {4, 2, 4, 2},
+                { 2, 4, 2, 4 },
+                { 4, 2, 4, 2 },
+                { 2, 0, 2, 4 },
+                { 4, 2, 4, 2 },
         };
 
         b = new Board(rawVals, 0);
@@ -108,15 +108,17 @@ public class TestEmptySpace {
     }
 
     @Test
-    /** Tests a completely full board.
+    /**
+     * Tests a completely full board.
      * The game isn't over since you can merge, but the emptySpaceExists method
-     * should only look for empty space (and not adjacent values). */
+     * should only look for empty space (and not adjacent values).
+     */
     public void testFullBoard() {
         int[][] rawVals = new int[][] {
-                {2, 2, 2, 2},
-                {2, 2, 2, 2},
-                {2, 2, 2, 2},
-                {2, 2, 2, 2},
+                { 2, 2, 2, 2 },
+                { 2, 2, 2, 2 },
+                { 2, 2, 2, 2 },
+                { 2, 2, 2, 2 },
         };
 
         b = new Board(rawVals, 0);
@@ -128,10 +130,10 @@ public class TestEmptySpace {
     /** Tests a completely full board. */
     public void testFullBoardNoMerge() {
         int[][] rawVals = new int[][] {
-                {2, 4, 2, 4},
-                {4, 2, 4, 2},
-                {2, 4, 2, 4},
-                {4, 2, 4, 2},
+                { 2, 4, 2, 4 },
+                { 4, 2, 4, 2 },
+                { 2, 4, 2, 4 },
+                { 4, 2, 4, 2 },
         };
 
         b = new Board(rawVals, 0);

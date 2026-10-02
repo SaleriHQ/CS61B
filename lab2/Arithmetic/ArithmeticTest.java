@@ -4,6 +4,9 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class ArithmeticTest {
+    public static void main(String[] args) {
+
+    }
 
     /** Performs a few arbitrary tests to see if the product method is
      * correct */
