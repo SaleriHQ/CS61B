@@ -12,13 +12,15 @@ import hashmap.MyHashMapTSBuckets;
 import hashmap.MyHashMapHSBuckets;
 import hashmap.MyHashMapPQBuckets;
 
-/** Performs a timing test on three different set implementations.
- *  @author Neil Kulkarni adapted from Josh Hug, Brendan Hu
+/**
+ * Performs a timing test on three different set implementations.
+ * 
+ * @author Neil Kulkarni adapted from Josh Hug, Brendan Hu
  */
 public class BucketsSpeedTest {
     /**
      * Requests user input and performs tests of three different set
-     * implementations. ARGS is unused. 
+     * implementations. ARGS is unused.
      */
     public static void main(String[] args) throws IOException {
         int N;
@@ -92,11 +94,15 @@ public class BucketsSpeedTest {
                 input.next();
             }
             ret = input.nextInt();
-            input.nextLine(); //consume \n not taken by nextInt()
+            input.nextLine(); // consume \n not taken by nextInt()
         } while (ret <= 0);
         return ret;
     }
-    /* ------------------------------- Private methods ------------------------------- */
+
+    /*
+     * ------------------------------- Private methods
+     * -------------------------------
+     */
     /**
      * To be called after catching a StackOverflowError
      * Prints the error with corresponding N and L
